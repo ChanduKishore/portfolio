@@ -14,38 +14,40 @@
 	<ul><li>About Me</li></ul>
 </nav>
 
-<h1>Hi <br>I am <br>Ch -and- u Kish -or- e</h1> 
+
+<div class="titlepage p-title">
+<h1 class="empty-s"><span class="greeting">Hi</span> <br>I am <br><span class="name">Ch -and- u Kish -or- e</span></h1> 
 <!-- change and or in my name to bitwise operators -->
 
-<p>Avaliable for Work <button> Get in touch</button></p>
+<p class="flex space-around "><span class="btn border">Avaliable for Work </span> <button class=" btn btn-success"> Get in touch</button></p>
 
-<h2>Projects </h2> 
+</div>
+
+<div class="projectpage">
+	<center>
+		<h2>Projects </h2> 
 <!-- change this project showcase background and font family timingly  -->
-
-<div>
-	<center><h3>Media Player App</h3>
+		<h3 class="text-left">Media Player App</h3>
 		<div class='project'>
 			<div class="card">
-				<img src="project1.jpg" alt="media player page image" >
+				<a href="https://mediaplayerapp.herokuapp.com" target="_blank"><div class="layer flex center"> <span class="btn white-c border" >Visit Me</span> </div></a>
+				<img src="project1.png" alt="media player page image" >
+				
 			</div>
 
 			<div class="text-left">
 				<p > A reposonsive web app function similar to to media player and the layout is identical to popular video streaming platform like youtube, vimeo </p>
 				<p>Show case your video library like online video course which is its main purpose </p>
 				<p>Seperated playlist based on modules names</p>
-				<p> project is documented open source on github <a href="https://github.com/ChanduKishore/media_player" target="_blank" >https://github.com/ChanduKishore/media_app</a></p>
+				<a href="https://github.com/ChanduKishore/media_player" target="_blank" ><span class="btn border white-c">Github Source Code</span></a>
 			</div>
 		</div>
-		<p class="link">
-			have a look at the sample <a href="https://mediaplayerapp.herokuapp.com" target="_blank">media player web app</a>
-		</p>
+		
 	
 	</center>
 </div>
-
-
-	
-<form >
+<div class="messageform  p-title ">
+<form  >
 	<h2 class="center">Message Me</h2>
 	<div>
 		<label>Email</label>
@@ -56,8 +58,9 @@
 		<textarea ></textarea>
 	</div>
 	<div class="center">
-	<button>Send Message</button></div>
+	<button class=" btn btn-success">Send Message</button></div>
 </form>
+</div>
 
 </body>
 </html>
