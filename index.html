@@ -73,14 +73,13 @@
 	function display(){
 		c=0;
 		let string ='Chandu Kishore';
+		name=string.split('');
 
 		let i=0;
 		
 		function typing(str){
-			const span =document.createElement('span');
-			span.textContent=str[i];
-			personName.appendChild(span);
-				i++;
+			personName.textContent+=str[i]
+			i++;
 		const type = setTimeout(typing,100,str);
 			if(i== string.length){
 				clearInterval(type);
@@ -88,36 +87,76 @@
 				i=string.length-1;
 
 			}
-			
-		
 
 			if(c===1){
-				personName.classList.remove('cursorRight');
-						const letters = document.querySelectorAll('.name span');
-							console.log(letters[0]);
-						
-							letters.forEach((letter,index)=>{
-								if(i === index){
-									letter.setAttribute('class','cursorRight');
-									console.log(letter);}
-							})
-						}
 
+				move('left',4);
+			}
+		}
 
 		
+		function move(direction,count){
+			manuplate(direction);
+			count--;
+			const moving = setTimeout(move,150,direction,count);
+					
+				if(count ===0){
+					console.log('stage3');
+					clearTimeout(moving);
+					}
+				
+				}
+				
 
+		function manuplate(operation){
 			
+		switch(true){
+			case operation==='right' :
+				i+=1;
+				break;
+			case operation==='left':
+				i-=1;
+				break;
+			case operation==='delete' :
+				name.splice(i,1);
+				i++;
+
 		}
 		
-		typing(string);
+		displayChange(name);	
 
 	}
 	
+
+				function displayChange(name){
+					personName.textContent='';
+				personName.classList.remove('cursorRight');
+
+							name.forEach((letter,index)=>{
+								const span =document.createElement('span');
+								span.textContent=letter;
+								personName.appendChild(span);
+								if(i === index){
+									span.classList.add('cursorRight');
+									}
+							})
+						}
+	
+		
+			typing(string);
+			
+		}
+		
+		
+
+	
+	
 	display();
+
+
 	
 	
 
-	
 	 
 
 
