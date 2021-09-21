@@ -16,7 +16,7 @@
 
 
 <div class="titlepage p-title">
-<h1 class="empty-s"><span class="greeting">Hi</span> <br>I am <br><span class="name">Ch -and- u Kish -or- e</span></h1> 
+<h1 class="empty-s"><span class="greeting">Hi</span> <br>I am <br><span class="name">Chandu Kishore</span></h1> 
 <!-- change and or in my name to bitwise operators -->
 
 <p class="flex space-around "><span class="btn border">Avaliable for Work </span> <button class=" btn btn-success"> Get in touch</button></p>
@@ -63,4 +63,67 @@
 </div>
 
 </body>
+<script type="text/javascript">
+	const personName = document.querySelector('.name');
+	personName.textContent='';
+	let name;
+	let j=0;
+	
+	personName.classList.add('class','cursorRight')
+	function display(){
+		c=0;
+		let string ='Chandu Kishore';
+
+		let i=0;
+		
+		function typing(str){
+			const span =document.createElement('span');
+			span.textContent=str[i];
+			personName.appendChild(span);
+				i++;
+		const type = setTimeout(typing,100,str);
+			if(i== string.length){
+				clearInterval(type);
+				c=1;
+				i=string.length-1;
+
+			}
+			
+		
+
+			if(c===1){
+				personName.classList.remove('cursorRight');
+						const letters = document.querySelectorAll('.name span');
+							console.log(letters[0]);
+						
+							letters.forEach((letter,index)=>{
+								if(i === index){
+									letter.setAttribute('class','cursorRight');
+									console.log(letter);}
+							})
+						}
+
+
+		
+
+			
+		}
+		
+		typing(string);
+
+	}
+	
+	display();
+	
+	
+
+	
+	 
+
+
+
+	
+	
+
+</script>
 </html>
