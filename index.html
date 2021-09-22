@@ -66,62 +66,141 @@
 <script type="text/javascript">
 	const personName = document.querySelector('.name');
 	personName.textContent='';
+
+	let i=-1;
 	let name;
-	let j=0;
-	
+	let typeSpeed=100;
+	let stages=[];
 	personName.classList.add('class','cursorRight')
 	function display(){
-		c=0;
-		let string ='Chandu Kishore';
-		name=string.split('');
-
-		let i=0;
 		
-		function typing(str){
-			personName.textContent+=str[i]
-			i++;
-		const type = setTimeout(typing,100,str);
-			if(i== string.length){
-				clearInterval(type);
-				c=1;
-				i=string.length-1;
+		let string ='Ch&u Kish|e';
+		name=[];
+
+		
+		setInterval(stage,1350);
+			function stage(){
+				switch(stages.length){
+				case 0:
+				insert(string,string.length);
+				break;
+				case 1:
+				insert('...',3);
+				break;
+				case 2:
+				insert('?',1);
+				break;
+				case 3:
+				move('left','|');
+				break;
+				case 4:
+				remove('|',1);
+				break;
+				case 5:
+				insert('or',2);
+				break;
+				case 6:
+				move('left','&');
+				break;
+				case 7:
+				remove('&',1);
+				break;
+				case 8:
+				insert('and',3);
+				break;
+				case 9:
+				move('right','?');
+				break;
+				case 10:
+				remove('...?',4);
+				break;
+				case 11:
+				insert(' :)',3);
+				break;
+				case 12:
+				remove(':)',2);
+				break;
+				case 13:
+				insert('😁🤩😍',3);
+				break;
 
 			}
 
-			if(c===1){
-
-				move('left',4);
-			}
 		}
 
+
+
+
+
 		
-		function move(direction,count){
+
+		
+		
+		function move(direction,char){
+			count = name.lastIndexOf(char)+1;
 			manuplate(direction);
 			count--;
-			const moving = setTimeout(move,150,direction,count);
+			const moving = setTimeout(move,typeSpeed,direction,char);
 					
-				if(count ===0){
-					console.log('stage3');
+				if(count === i){
 					clearTimeout(moving);
+					stages.push('moveto '+char+' complete');
 					}
 				
 				}
+
+		function remove(word,len,ref){
+				if(word.length === len){
+					ref= word;
+				}
+			manuplate('delete');
+					word=word.slice(1);
+			const removing = setTimeout(remove,typeSpeed,word,len,ref);
+
+			if(!word){
+				clearTimeout(removing);
+				stages.push(ref + ' removed');
+					
+
+			}
+		}
+			
+
+		function insert(word,len,ref){
+				if(word.length === len){
+					ref = word;
+				}
+
+			manuplate('type',word[0]);
+			word=word.slice(1);
+
+			const typing =setTimeout(insert,typeSpeed,word,len,ref);
+			if(!word){
+				clearTimeout(typing);
+				stages.push( ref+' inserted');
 				
 
-		function manuplate(operation){
+			}
+
+		}	
+
+		function manuplate(operation,char){
 			
-		switch(true){
-			case operation==='right' :
+		switch(operation){
+			case 'right' :
 				i+=1;
 				break;
-			case operation==='left':
+			case 'left':
 				i-=1;
 				break;
-			case operation==='delete' :
+			case 'delete' :
 				name.splice(i,1);
+				i--;
+				break;
+			case 'type':
+				name.splice(i+1,0,char);
 				i++;
-
-		}
+				break;	}
 		
 		displayChange(name);	
 
@@ -130,7 +209,7 @@
 
 				function displayChange(name){
 					personName.textContent='';
-				personName.classList.remove('cursorRight');
+					personName.classList.remove('cursorRight');
 
 							name.forEach((letter,index)=>{
 								const span =document.createElement('span');
@@ -139,13 +218,15 @@
 								if(i === index){
 									span.classList.add('cursorRight');
 									}
+									console.log(i,index);
 							})
 						}
 	
 		
-			typing(string);
+			
 			
 		}
+	
 		
 		
 
