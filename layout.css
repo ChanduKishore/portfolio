@@ -5,7 +5,7 @@
 .projectpage,.messageform{position: absolute; top: 0;visibility: hidden;}
 body{
 	color: white;
-	font-size: 14px;
+	font-size: 16px;
 	font-family: arial;
 	background:#2993a3 ;
 	margin: 0;padding: 0;
@@ -150,7 +150,7 @@ h1{
 	.cursorRight{border-right: 1px solid;}
 	.cursorLeft{border-left: 1px solid;}
 
-	@media( width  < 40em){
+	@media( width  < 45em){
 		
 
 			.sidebar{
