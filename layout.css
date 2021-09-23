@@ -152,27 +152,6 @@ h1{
 
 	@media( width < 30em){
 		
-		.greeting{ font-size: 1.5rem; 
-			top: 100px;
-			left: 10px;
-			}
-
-		body{
-		 font-size: 0.75rem;
-			}
-
-		h1{
-
-			font-size: 1.5rem;
-			z-index: 10;}
-		.titles{
-			margin: 100px 0 0 0;
-			padding: 0;
-		}
-		.job-title{font-size: 0.5rem;}
-		.name{font-size: 4rem;
-
-			}
 
 			.sidebar{
 				position:static;
