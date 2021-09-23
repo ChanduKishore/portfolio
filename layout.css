@@ -152,7 +152,7 @@ h1{
 
 	@media( width < 30em){
 		
-		.greeting{ font-size: 5rem; 
+		.greeting{ font-size: 1.5rem; 
 			top: 100px;
 			left: 10px;
 			}
