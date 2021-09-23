@@ -150,9 +150,11 @@ h1{
 	.cursorRight{border-right: 1px solid;}
 	.cursorLeft{border-left: 1px solid;}
 
-	@media(width > 40rem){
+	@media(width < 720px){
 		
-
+			.greeting{
+				font-size: 7rem;
+			}
 			.sidebar{
 				position:static;
 				writing-mode: horizontal-tb;
