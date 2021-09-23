@@ -81,19 +81,7 @@
 	const messageForm = document.querySelector('.messageform');
 	let pageXOffset=0;
 
-	window.addEventListener('wheel',(e)=>{
-		pageXOffset += e.deltaY;
-		window.scrollTo(pageXOffset,0);
-	})
-
 	
-
-	window.addEventListener('keypress',(e)=>{
-		if(e.key==='P'){
-			body.appendChild(projects);
-		}
-	})
-
 
 </script>
 </html>

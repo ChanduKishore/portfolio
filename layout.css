@@ -1,28 +1,25 @@
-html{overflow-y: hidden;}
-*{box-sizing: border-box;}
-.titlepage, .projectpage, .messageform{position: relative;
-top: 50px}
 
+
+*{box-sizing: border-box;}
+
+.projectpage,.messageform{position: absolute; top: 0;visibility: hidden;}
 body{
 	color: white;
 	font-size: 14px;
 	font-family: arial;
-	background:linear-gradient(to bottom  ,#2993a3  ,#207683 ,black 150%);
+	background:linear-gradient(to bottom  ,#2993a3  ,#207683 );
 	margin: 0;padding: 0;
-	height: 100vh;
-	width: 300vw;
-
 
 	}
 	nav{margin: 0 10px;
-		position: absolute;}
+		
+		}
 
 a{text-decoration: none;}
 
 
 
-body{display: grid;
-grid-template-columns: repeat(3, 1fr);}
+
 
 h1{
 	margin-bottom: 0;
@@ -155,14 +152,13 @@ h1{
 
 	@media( width < 30em){
 		
-		.greeting{ font-size: 7rem; 
-			top: 50px;
-			left:15vw;}
+		.greeting{ font-size: 5rem; 
+			top: 100px;
+			left: 10px;
+			}
 
-		body{ font-size: 0.75rem ;
-				height: 100vh;
-			z-index: -10;
-			
+		body{
+		 font-size: 0.75rem;
 			}
 
 		h1{
