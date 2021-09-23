@@ -150,7 +150,7 @@ h1{
 	.cursorRight{border-right: 1px solid;}
 	.cursorLeft{border-left: 1px solid;}
 
-	@media( width  < 45em){
+	@media(width > 40rem){
 		
 
 			.sidebar{
