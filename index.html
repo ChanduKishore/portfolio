@@ -4,10 +4,13 @@
 	<meta charset="utf-8">
 	<meta name='viewport' content="width=device-width ,initial-scale=1">
 	<title>CH&U KISH|E</title>
-	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" type="text/css" href="layout.css">
+	<link rel="stylesheet" type="text/css" href="animations.css">
+	<script type="text/javascript" src="textAnimation.js" defer></script>
 	
 </head>
 <body>
+	
 	<!-- idea or theme of this portifolio is dynamic changes in text using java script 
 	trasistions to show case my java script skills -->
 <nav>
@@ -16,12 +19,21 @@
 
 
 <div class="titlepage p-title">
-<h1 class="empty-s"><span class="greeting">Hi</span> <br>I am <br><span class="name">Chandu Kishore</span></h1> 
+
+	<div class="titles">
+<h1 class=""><span class="greeting">Hello <br>this is<br></span><span class="name">Chandu Kishore</span></h1> 
+<p class="job-title">Web Developer | Front End Developer</p>
+</div>
 <!-- change and or in my name to bitwise operators -->
 
 <p class="flex space-around "><span class="btn border">Avaliable for Work </span> <button class=" btn btn-success"> Get in touch</button></p>
+<div class="sidebar">
+	<span>projects</span><span class="arrow">ᐳ</span>
+</div>
 
 </div>
+
+
 
 <div class="projectpage">
 	<center>
@@ -46,7 +58,7 @@
 	
 	</center>
 </div>
-<div class="messageform  p-title ">
+<div class="messageform ">
 <form  >
 	<h2 class="center">Message Me</h2>
 	<div>
@@ -64,186 +76,24 @@
 
 </body>
 <script type="text/javascript">
-	const personName = document.querySelector('.name');
-	personName.textContent='';
+	const body= document.querySelector('body');
+	const projects =document.querySelector('.projectpage') ;
+	const messageForm = document.querySelector('.messageform');
+	let pageXOffset=0;
 
-	let i=-1;
-	let name;
-	let typeSpeed=100;
-	let stages=[];
-	personName.classList.add('class','cursorRight')
-	function display(){
-		
-		let string ='Ch&u Kish|e';
-		name=[];
+	window.addEventListener('wheel',(e)=>{
+		pageXOffset += e.deltaY;
+		window.scrollTo(pageXOffset,0);
+	})
 
-		
-		setInterval(stage,1350);
-			function stage(){
-				switch(stages.length){
-				case 0:
-				insert(string,string.length);
-				break;
-				case 1:
-				insert('...',3);
-				break;
-				case 2:
-				insert('?',1);
-				break;
-				case 3:
-				move('left','|');
-				break;
-				case 4:
-				remove('|',1);
-				break;
-				case 5:
-				insert('or',2);
-				break;
-				case 6:
-				move('left','&');
-				break;
-				case 7:
-				remove('&',1);
-				break;
-				case 8:
-				insert('and',3);
-				break;
-				case 9:
-				move('right','?');
-				break;
-				case 10:
-				remove('...?',4);
-				break;
-				case 11:
-				insert(' :)',3);
-				break;
-				case 12:
-				remove(':)',2);
-				break;
-				case 13:
-				insert('😁🤩😍',3);
-				break;
+	
 
-			}
-
+	window.addEventListener('keypress',(e)=>{
+		if(e.key==='P'){
+			body.appendChild(projects);
 		}
+	})
 
-
-
-
-
-		
-
-		
-		
-		function move(direction,char){
-			count = name.lastIndexOf(char)+1;
-			manuplate(direction);
-			count--;
-			const moving = setTimeout(move,typeSpeed,direction,char);
-					
-				if(count === i){
-					clearTimeout(moving);
-					stages.push('moveto '+char+' complete');
-					}
-				
-				}
-
-		function remove(word,len,ref){
-				if(word.length === len){
-					ref= word;
-				}
-			manuplate('delete');
-					word=word.slice(1);
-			const removing = setTimeout(remove,typeSpeed,word,len,ref);
-
-			if(!word){
-				clearTimeout(removing);
-				stages.push(ref + ' removed');
-					
-
-			}
-		}
-			
-
-		function insert(word,len,ref){
-				if(word.length === len){
-					ref = word;
-				}
-
-			manuplate('type',word[0]);
-			word=word.slice(1);
-
-			const typing =setTimeout(insert,typeSpeed,word,len,ref);
-			if(!word){
-				clearTimeout(typing);
-				stages.push( ref+' inserted');
-				
-
-			}
-
-		}	
-
-		function manuplate(operation,char){
-			
-		switch(operation){
-			case 'right' :
-				i+=1;
-				break;
-			case 'left':
-				i-=1;
-				break;
-			case 'delete' :
-				name.splice(i,1);
-				i--;
-				break;
-			case 'type':
-				name.splice(i+1,0,char);
-				i++;
-				break;	}
-		
-		displayChange(name);	
-
-	}
-	
-
-				function displayChange(name){
-					personName.textContent='';
-					personName.classList.remove('cursorRight');
-
-							name.forEach((letter,index)=>{
-								const span =document.createElement('span');
-								span.textContent=letter;
-								personName.appendChild(span);
-								if(i === index){
-									span.classList.add('cursorRight');
-									}
-									console.log(i,index);
-							})
-						}
-	
-		
-			
-			
-		}
-	
-		
-		
-
-	
-	
-	display();
-
-
-	
-	
-
-	 
-
-
-
-	
-	
 
 </script>
 </html>

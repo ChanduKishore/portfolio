@@ -1,0 +1,212 @@
+html{overflow-y: hidden;}
+*{box-sizing: border-box;}
+.titlepage, .projectpage, .messageform{position: relative;
+top: 50px}
+
+body{
+	color: white;
+	font-size: 14px;
+	font-family: arial;
+	background:linear-gradient(to bottom  ,#2993a3  ,#207683 ,black 150%);
+	margin: 0;padding: 0;
+	height: 100vh;
+	width: 300vw;
+
+
+	}
+	nav{margin: 0 10px;
+		position: absolute;}
+
+a{text-decoration: none;}
+
+
+
+body{display: grid;
+grid-template-columns: repeat(3, 1fr);}
+
+h1{
+	margin-bottom: 0;
+	padding-bottom: 0;
+	margin: 0 30px;
+	}
+
+.titles{
+		margin: 50px 0;
+		text-align: center;
+		min-height: 250px;
+	}
+
+	.greeting{
+		z-index: -10;
+		text-shadow: 2px 2px black;
+		color: ghostwhite;
+		position: absolute;
+		font-size: 10rem;
+		text-transform: uppercase;
+		transform: rotate(-29deg);
+		opacity: 0.05;
+		left: 20vw;
+		top: 50px;
+		
+	}
+	.name{
+		font-size: 5rem;
+		text-transform: uppercase;
+				}
+	
+		img{max-width: 100%;}
+
+		.border{border: 1px solid ;}
+
+.sidebar{
+	color: #1d6772;
+	position: absolute;
+	top: 125px;
+	right: 0;
+	text-transform: uppercase;
+	writing-mode: vertical-lr;
+	text-orientation: upright;
+	padding:50px 10px;
+	background :skyblue;}
+
+	.arrow{padding: 10px 0;}
+
+
+	.project{
+			width: calc(100% - 20vw);
+			display: grid;
+			grid-template-columns: 400px 1fr;
+			grid-gap: 20px;
+			}
+
+	.card{ position: relative;}
+
+	.card img, .layer{ border-radius: 15px ;}
+
+	.layer{width: 95%;height: 98%;
+		position: absolute;
+		top: 0; 
+		visibility: hidden;
+		}
+
+	a span:hover{ 
+		background:white;
+	 color: black ;
+	 border: none;
+	}
+	.card:hover .layer{
+		background: rgba(0, 0, 0, 0.3);
+		visibility: visible;
+	}
+	.text-right{text-align: right;}
+	.text-left{text-align: left;}
+	.center{text-align: center;}
+
+	
+
+	form{
+		width: 500px;
+		padding: 20px;
+		margin: 0 auto;
+	}
+
+	form div{margin-bottom: 10px;}
+
+	
+	input,textarea{
+				 width:100%;
+				padding:5px ;
+				
+			}
+
+	textarea{
+		resize:none ;
+		height: 150px;}
+
+
+	nav{ display:flex;
+		justify-content: flex-end;}
+
+	nav li{list-style: none;
+		border: 1px solid;
+		padding: 10px;
+		box-shadow: 2px 2px 1px  ;}
+
+	.btn{
+		padding: 10px;
+	}
+
+	.btn-success{ 
+		background: lightgreen;
+		
+		 }
+	.flex{display: flex;}
+
+	.space-between{justify-content: space-between;}
+	.space-around{justify-content: space-around;}
+	.center{align-items: center;
+		justify-content: center;}
+	
+	.white-c{color: white;}
+
+
+	.cursorRight{border-right: 1px solid;}
+	.cursorLeft{border-left: 1px solid;}
+
+	@media( width < 30em){
+		
+		.greeting{ font-size: 7rem; 
+			top: 50px;
+			left:15vw;}
+
+		body{ font-size: 0.75rem ;
+				height: 100vh;
+			z-index: -10;
+			
+			}
+
+		h1{
+
+			font-size: 1.5rem;
+			z-index: 10;}
+		.titles{
+			margin: 100px 0 0 0;
+			padding: 0;
+		}
+		.job-title{font-size: 0.5rem;}
+		.name{font-size: 4rem;
+
+			}
+
+			.sidebar{
+				position:static;
+				writing-mode: horizontal-tb;
+				text-orientation: sideways;
+					padding: 0;
+					padding-left: calc(50vw - 100px);
+					text-transform: capitalize;
+					}
+		
+			.arrow{
+				padding-left:20px ; 
+				display: inline-block;
+
+				animation: pointing 0.5s ease-out  infinite alternate-reverse;}
+
+		.card img{
+			width: 450px}
+
+		.project{
+			display: block;}
+
+		.link{
+			text-align:left;}
+
+		form{width: 100%;}
+	}
+
+
+	@keyframes pointing{
+		from{padding-left: 10px;}
+		to{padding-left: 20px}
+	}

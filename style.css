@@ -9,9 +9,17 @@ body{color: white; font-size: 14px;
 	
 
 a{text-decoration: none;}
+
 h1{ font-size: 3rem;
 	padding: 20px;
+
+	margin-bottom: 0;
+	padding-bottom: 0;
 	}
+	.job-title{
+		margin-top: 0;
+		margin-left: 25px;
+		margin-bottom: 50px;}
 
 		*{box-sizing: border-box;}
 
@@ -106,9 +114,12 @@ h1{ font-size: 3rem;
 			grid-template-columns: 350px 1fr;}
 	}
 	@media( width < 44em){
+		body{ font-size: 0.75rem ;
+			}
 
 		h1{
-			font-size: 2rem;}
+			font-size: 1.5rem;}
+			.job-title{font-size: 0.5rem;}
 
 		.card img{
 			width: 450px}

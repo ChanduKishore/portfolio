@@ -1,0 +1,15 @@
+body{position: relative;}
+.curtains{animation: curtains-up 0.5s ease-in 0.5s forwards;
+
+height: 300vh;
+width: 100%;
+background: linear-gradient(to bottom, white 50%, red 50%);
+position: fixed;
+z-index: 100;}
+
+@keyframes curtains-up{
+	0%{top: 0;}
+	
+	100%{top: -300vh;}
+	
+}
