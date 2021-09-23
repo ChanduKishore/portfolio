@@ -1,8 +1,88 @@
 
+
+body{
+	background:#0A181E ;
+	color: white;
+	font-family: arial;
+font-size: 14px;
+margin: 0;
+padding: 0;
+overflow: hidden;}
+
+nav{display: flex;
+	justify-content: flex-end;
+	margin: 0 10px;
+	}
+
+.titles{
+	text-transform: uppercase;
+	min-height: 12rem;
+	margin-top: 100px;}
+
+.greeting{
+	position: absolute;
+	z-index: -10;
+	opacity: 0.1;
+	font-size: 5.5rem;
+	text-align: center;
+	top: 100px;
+	left: 20px;
+	transform: rotate(-15deg);
+}
+
+.name-container{margin: 0;}
+.name{
+	font-size: 4rem;
+	text-align: center;
+	
+}	
+
+.job-title{
+	text-transform: capitalize;
+}
+
+.sidebar{
+	margin-top:50px ;
+	background: #99E0FF;
+	color: #004766;
+	padding: 15px 0;
+	text-transform: capitalize;
+}
+.sidebar span{ padding-left :30vw}
+.arrow{
+	padding: 0 20px;
+	animation: pointing 1s ease infinite alternate-reverse;
+}
+
+.cursor{border-right:1px solid ;}
+
 .card{
 	width: 100%;
 	border-radius: 20px;
 }
-.card img{border-radius: 20px;}
+.card img{
+	border-radius: 20px;
+}
 
 img{max-width: 100%}
+ 
+.btn{
+	border: 1px solid;
+	padding: 10px;
+	display: inline-block;
+	color: white;
+}
+.btn-success{background:#009DE0 ;}
+
+.flex{display: flex;}
+
+.space-around{justify-content: space-around;}
+.space-between{justify-content: space-between;}
+
+@keyframes pointing{
+	from{padding-left: 20px;}
+	to{padding-left: 10px;}
+}
+
+
+

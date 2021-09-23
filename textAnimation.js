@@ -20,7 +20,7 @@ const jobRole = document.querySelector('.job-title');
 	let typeSpeed=45;
 	let stages=[];
 	
-	personName.classList.add('class','cursorRight')
+	personName.classList.add('class','cursor')
 	function display(){
 		
 		let string ='Ch&u Kish|e';
@@ -167,7 +167,7 @@ const jobRole = document.querySelector('.job-title');
 
 				function displayChange(name){
 					personName.textContent='';
-					personName.classList.remove('cursorRight');
+					personName.classList.remove('cursor');
 
 							name.forEach((letter,index)=>{
 								const span =document.createElement('span');
@@ -175,7 +175,7 @@ const jobRole = document.querySelector('.job-title');
 
 								personName.appendChild(span);
 								if(i === index){
-									span.classList.add('cursorRight');
+									span.classList.add('cursor');
 									}
 									
 							})
@@ -186,7 +186,7 @@ const jobRole = document.querySelector('.job-title');
 				const cursor= document.querySelectorAll('.name span');
 
 				cursor.forEach(span =>{
-					span.classList.remove('cursorRight');
+					span.classList.remove('cursor');
 				})
 
 				
