@@ -1,0 +1,8 @@
+
+.card{
+	width: 100%;
+	border-radius: 20px;
+}
+.card img{border-radius: 20px;}
+
+img{max-width: 100%}
