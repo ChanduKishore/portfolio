@@ -62,7 +62,7 @@ nav{display: flex;
 	padding: 15px 0;
 	text-transform: capitalize;
 	opacity: 0;
-	animation: fade-in 2s ease 10s forwards,vanish 1s ease 30s forwards;
+	animation: fade-in 2s ease 10s forwards;
 }
 .sidebar span{ padding-left :30vw}
 .arrow{
@@ -75,9 +75,10 @@ nav{display: flex;
 
 
 
-.projectpage{
-	
-	padding: 10px;
+.projects-container{
+	position: relative;
+	width: 90%;
+	margin: 0 auto;
 }
 .card{
 	width: 100%;
@@ -100,7 +101,7 @@ img{max-width: 100%}
 
 .project-description{
 
-	height: 95px;
+	height: 90px;
 	overflow: hidden;
 	text-overflow: ellipsis;
 	animation: read-more 1s ease;
@@ -111,7 +112,7 @@ img{max-width: 100%}
 .project-description::before{
 	content: "";
     position: absolute;
-   bottom: 65px;
+   bottom: 45px;
     height: 20px;
     width: 100%;
     pointer-events: none;
@@ -128,12 +129,33 @@ img{max-width: 100%}
 	
 }
 
+form{
+	position: relative;
+	width: 80%;
+	margin: 0 auto;
+}
+input,textarea,button{font-family: inherit;
+font-size: inherit;}
+
+form h2{text-align: center;}
+
+form div{ margin-bottom:20px ; }
+
+input,textarea{width: 100%;
+	padding: 5px;
+}
+
+textarea{
+	height: 100px;
+	resize: none;}
+
+label{font-size: 0.6rem;}
 
 .projectpage,.messageform{
- width: 100%;
- position: absolute;
- top:-1000vh;
- animation: 0.7s ease forwards;
+	 width: 100vw;
+	 position: absolute;
+	 top:-1000vh;
+	 animation: 0.7s ease forwards;
 }
 
 .text-left{text-align: left;}
@@ -203,10 +225,10 @@ img{max-width: 100%}
 }
 
 @keyframes read-more{
-	from{height: 95px;}
+	from{height: 90px;}
 	to{height:210px;}
 }
 @keyframes read-less{
 	from{height: 210px;}
-	to{height: 95px;}
+	to{height: 90px;}
 }

@@ -36,7 +36,7 @@
 
 
 <div class="projectpage page">
-	<center>
+	<center class='projects-container'>
 		<h2>Projects </h2> 
 <!-- change this project showcase background and font family timingly  -->
 		<h3 class="text-left">Media Player App</h3>
@@ -57,22 +57,20 @@
 			</div><p class="read-more"><button class="btn">read more</button></p>
 			
 		</div>
-		
-	
 	</center>
 </div>
 <div class="messageform page">
-<form  >
+<form name="contact" method="POST" data-netlify="true" >
 	<h2 class="center">Message Me</h2>
 	<div>
-		<label>Email</label>
-		<input type="email" name="email">
+		<label for="email">Email</label>
+		<input type="email" name="email" id='email'>
 	</div>
 	<div>
-		<label>Message</label>
-		<textarea ></textarea>
+		<label for="message">Message</label>
+		<textarea name="message" id='message'></textarea>
 	</div>
-	<div class="center">
+	<div class="flex center">
 	<button class=" btn btn-success">Send Message</button></div>
 </form>
 </div>
@@ -83,6 +81,8 @@
 	const readMore =document.querySelector('.read-more button');
 	const projectDesc =document.querySelector('.project-description');
 	const  pages =document.querySelectorAll('.page') ;
+
+	const sideBar = document.querySelector('.sidebar')
 	let currentPage = pages[0] ;
 
 	let previousPage=0;
@@ -129,6 +129,8 @@ function changePage(){
 		if([...pages].indexOf(currentPage))previous();
 		break;
 	}
+
+	
 }
 
 function next(){
@@ -141,6 +143,10 @@ function next(){
 	let currentPageIndex =[...pages].indexOf(currentPage);
 	let nextPageIndex = currentPageIndex +1
 	nextPage= pages[nextPageIndex];
+
+	if( sideBar){
+		sideBar.parentNode.removeChild(sideBar);
+	}
 
 	}
 
