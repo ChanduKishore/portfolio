@@ -17,8 +17,8 @@
 	<ul><li class="btn">About Me</li></ul>
 </nav>
 
-
-<div class="titlepage p-title">
+<main>
+<div class="titlepage page">
 
 	<center class="titles">
 <h1 class="name-container"><span class="greeting">Hello <br>this is<br></span><span class="name">Chandu Kishore</span></h1> 
@@ -35,7 +35,7 @@
 
 
 
-<div class="projectpage">
+<div class="projectpage page">
 	<center>
 		<h2>Projects </h2> 
 <!-- change this project showcase background and font family timingly  -->
@@ -53,12 +53,13 @@
 				<p>Seperated playlist based on modules names</p>
 				<a href="https://github.com/ChanduKishore/media_player" target="_blank" ><span class="btn border white-c">Github Source Code</span></a>
 			</div>
+			
 		</div>
 		
 	
 	</center>
 </div>
-<div class="messageform ">
+<div class="messageform page">
 <form  >
 	<h2 class="center">Message Me</h2>
 	<div>
@@ -73,17 +74,84 @@
 	<button class=" btn btn-success">Send Message</button></div>
 </form>
 </div>
-
+</main>
 </body>
 <script type="text/javascript">
 	const body= document.querySelector('body');
 	
-	const projects =document.querySelector('.projectpage') ;
-	const messageForm = document.querySelector('.messageform');
-	let pageXOffset=0;
+	const  pages =document.querySelectorAll('.page') ;
+	let currentPage = pages[0] ;
+
+	let previousPage=0;
+	let nextPage=pages[1];
+
+	let touchstartX = 0;
+	let touchendX = 0;
+	let touchmoveX = 0;
+	let gesture;
 
 
-	
+function handleGesture() {
+  if (touchendX < touchstartX) {
+  	gesture ='swiped left!';
+  	console.log('swiped left!')}
+  if (touchendX > touchstartX) {
+  	gesture ='swiped right!';
+  	console.log('swiped right!')}
+}
+	window.addEventListener('touchstart',(e)=> {
+		 touchstartX = e.changedTouches[0].screenX
+		})
+	window.addEventListener('touchmove',(e)=> {
+		 touchmoveX = e.changedTouches[0].screenX;
+		 console.log(touchmoveX)
+		})
+
+window.addEventListener('touchend',(e)=> {
+	 touchendX = e.changedTouches[0].screenX
+	handleGesture()
+	changePage();
+})
+
+
+function changePage(){
+
+	switch(gesture){
+		case 'swiped left!':
+		next();
+		break;
+		case 'swiped right!':
+		previous();
+		break;
+	}
+}
+
+function next(){
+if(nextPage){
+	currentPage.style.animationName='slide-leave-rl';
+	nextPage.style.animationName='slide-enter-rl';
+
+	previousPage = currentPage;
+	currentPage =nextPage;
+	let currentPageIndex =[...pages].indexOf(currentPage);
+	let nextPageIndex =(pages.length-1 >= currentPageIndex+1)? currentPageIndex +1 : 0
+	nextPage= pages[nextPageIndex]
+
+	}
+}
+
+function previous(){
+	if(previousPage){
+		currentPage.style.animationName='slide-leave-lr';
+		previousPage.style.animationName='slide-enter-lr';
+
+		nextPage =currentPage;
+		currentPage =previousPage;
+		let currentPageIndex =[...pages].indexOf(currentPage);
+		let previousPageIndex =(currentPageIndex)? currentPageIndex-1:currentPageIndex;
+		previousPage= pages[previousPageIndex]
+	}
+}
 
 </script>
 </html>

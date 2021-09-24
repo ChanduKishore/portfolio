@@ -7,17 +7,21 @@ body{
 font-size: 14px;
 margin: 0;
 padding: 0;
-overflow: hidden;}
+}
 
 nav{display: flex;
 	justify-content: flex-end;
 	margin: 0 10px;
 	}
 
+.titlepage{position: absolute;
+		width: 100%;
+		top: 100px;
+	 animation: 0.7s ease forwards;
+	 }
 .titles{
 	text-transform: uppercase;
-	min-height: 12rem;
-	margin-top: 100px;}
+	min-height: 12rem;}
 
 .greeting{
 	position: absolute;
@@ -30,11 +34,12 @@ nav{display: flex;
 	transform: rotate(-15deg);
 }
 
-.name-container{margin: 0;}
+.name-container{
+	margin: 0;
+	min-height: 10rem;}
 .name{
 	font-size: 4rem;
-	text-align: center;
-	
+	text-align: center;	
 }	
 
 .job-title{
@@ -55,6 +60,15 @@ nav{display: flex;
 }
 
 .cursor{border-right:1px solid ;}
+
+
+
+.projectpage,.messageform{
+	width: 100%;
+ position: absolute;
+ top:-1000vh;
+ animation: 0.7s ease forwards;}
+
 
 .card{
 	width: 100%;
@@ -84,5 +98,27 @@ img{max-width: 100%}
 	to{padding-left: 10px;}
 }
 
+@keyframes slide-enter-rl{
+	from{top: 100px;left: 100vw}
+	to{top: 100px;left: 0}
 
+}
+@keyframes slide-enter-lr{
+	from{top: 100px;right: 100vw}
+	to{top: 100px;right: 0}
 
+}
+
+@keyframes slide-leave-rl{
+0%{top: 100px; right: 0}
+99%{top: 100px;right: 100vw;} 
+100%{top: -1000vh;
+ }
+}
+
+@keyframes slide-leave-lr{
+	0%{top: 100px;left:0}
+	99%{top: 100px;left: 100vw}
+	100%{top: -1000vh}
+
+}
