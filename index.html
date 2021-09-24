@@ -126,7 +126,7 @@ function changePage(){
 		if([...pages].indexOf(currentPage)!== pages.length-1) next();
 		break;
 		case 'swiped right!':
-		if([...pages].indexOf(currentPage))previous();
+		if([...pages].indexOf(currentPage))previous()
 		break;
 	}
 
@@ -144,9 +144,9 @@ function next(){
 	let nextPageIndex = currentPageIndex +1
 	nextPage= pages[nextPageIndex];
 
-	if( sideBar){
-		sideBar.parentNode.removeChild(sideBar);
-	}
+		if( sideBar.parentNode!==null){
+				sideBar.parentNode.removeChild(sideBar);
+			}
 
 	}
 
