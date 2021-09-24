@@ -9,6 +9,7 @@ margin: 0;
 padding: 0;
 }
 
+*{box-sizing: border-box;}
 nav{display: flex;
 	justify-content: flex-end;
 	margin: 0 10px;
@@ -16,6 +17,7 @@ nav{display: flex;
 
 .titlepage{position: absolute;
 		width: 100%;
+		margin-top: 100px;
 		top: 100px;
 	 animation: 0.7s ease forwards;
 	 }
@@ -29,7 +31,7 @@ nav{display: flex;
 	opacity: 0.1;
 	font-size: 5.5rem;
 	text-align: center;
-	top: 100px;
+	top: -100px;
 	left: 20px;
 	transform: rotate(-15deg);
 }
@@ -46,12 +48,21 @@ nav{display: flex;
 	text-transform: capitalize;
 }
 
+.availability, .get-in-touch{
+	position: relative;
+	top: 100px;
+ 	animation: slide-up 1s ease 8s forwards; }
+
 .sidebar{
-	margin-top:50px ;
+	position: fixed;
+	bottom: 50px;
+	width: 100vw;
 	background: #99E0FF;
 	color: #004766;
 	padding: 15px 0;
 	text-transform: capitalize;
+	opacity: 0;
+	animation: fade-in 2s ease 10s forwards,vanish 1s ease 30s forwards;
 }
 .sidebar span{ padding-left :30vw}
 .arrow{
@@ -63,35 +74,89 @@ nav{display: flex;
 
 
 
-.projectpage,.messageform{
-	width: 100%;
- position: absolute;
- top:-1000vh;
- animation: 0.7s ease forwards;}
 
-
+.projectpage{
+	
+	padding: 10px;
+}
 .card{
 	width: 100%;
 	border-radius: 20px;
+	position: relative;
 }
 .card img{
 	border-radius: 20px;
+
 }
 
+.layer{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	opacity: 0;}
+
 img{max-width: 100%}
- 
+
+.project-description{
+
+	height: 95px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	animation: read-more 1s ease;
+	
+	animation: 1s ease forwards ;
+	opacity: 0.9;
+}
+.project-description::before{
+	content: "";
+    position: absolute;
+   bottom: 65px;
+    height: 20px;
+    width: 100%;
+    pointer-events: none;
+   
+    background-image : -webkit-linear-gradient(to bottom, transparent, #0A181E);
+    background-image : linear-gradient(to bottom, transparent, #0A181E);
+}
+
+.read-more{
+	margin: 10px;
+	text-align: right;
+	background: none;
+	opacity: 1;
+	
+}
+
+
+.projectpage,.messageform{
+ width: 100%;
+ position: absolute;
+ top:-1000vh;
+ animation: 0.7s ease forwards;
+}
+
+.text-left{text-align: left;}
+.text-right{text-align: right;}
+
 .btn{
 	border: 1px solid;
 	padding: 10px;
 	display: inline-block;
 	color: white;
+	background: none;
 }
 .btn-success{background:#009DE0 ;}
 
 .flex{display: flex;}
-
+.center{
+	align-items: center;
+	justify-content: center;}
 .space-around{justify-content: space-around;}
 .space-between{justify-content: space-between;}
+
+.m-0{margin: 0}
+.of-hidden{overflow: hidden;}
 
 @keyframes pointing{
 	from{padding-left: 20px;}
@@ -99,26 +164,49 @@ img{max-width: 100%}
 }
 
 @keyframes slide-enter-rl{
-	from{top: 100px;left: 100vw}
+	from{top: 100px;left: 150vw}
 	to{top: 100px;left: 0}
 
 }
 @keyframes slide-enter-lr{
-	from{top: 100px;right: 100vw}
+	from{top: 100px;right: 150vw}
 	to{top: 100px;right: 0}
 
 }
 
 @keyframes slide-leave-rl{
 0%{top: 100px; right: 0}
-99%{top: 100px;right: 100vw;} 
+99%{top: 100px;right: 150vw;} 
 100%{top: -1000vh;
  }
 }
 
 @keyframes slide-leave-lr{
 	0%{top: 100px;left:0}
-	99%{top: 100px;left: 100vw}
+	99%{top: 100px;left: 150vw}
 	100%{top: -1000vh}
 
+}
+@keyframes fade-in{
+	from{opacity: 0;}
+	to{opacity: 1;}
+}
+
+@keyframes slide-up{
+	from{top: 100px; opacity: 0.5;}
+	to{top: 0;opacity: 1;}
+}
+
+@keyframes vanish{
+	from{opacity: 1;}
+	to{opacity: 0;}
+}
+
+@keyframes read-more{
+	from{height: 95px;}
+	to{height:210px;}
+}
+@keyframes read-less{
+	from{height: 210px;}
+	to{height: 95px;}
 }

@@ -1,6 +1,7 @@
 
 const personName = document.querySelector('.name');
 	personName.textContent='';
+
 const jobRole = document.querySelector('.job-title');
 	jobRoleText=jobRole.textContent;
 	jobRole.textContent='';
@@ -19,14 +20,12 @@ const jobRole = document.querySelector('.job-title');
 	let name;
 	let typeSpeed=45;
 	let stages=[];
-	
-	personName.classList.add('class','cursor')
 	function display(){
 		
 		let string ='Ch&u Kish|e';
 		name=[];
 
-		typingEffect(jobRole,jobRoleText);
+		setTimeout(typingEffect,2000,jobRole,jobRoleText);
 		const titleAnimation =setInterval(stage,12*typeSpeed);
 			function stage(){
 				switch(stages.length){
@@ -84,14 +83,6 @@ const jobRole = document.querySelector('.job-title');
 		}
 
 		
-
-
-
-
-		
-
-		
-		
 		function move(direction,char){
 			count = name.lastIndexOf(char)+1;
 			manuplate(direction);
@@ -126,8 +117,6 @@ const jobRole = document.querySelector('.job-title');
 				if(word.length === len){
 					ref = word;
 				}
-
-
 
 			manuplate('type',word[0]);
 			word=word.slice(1);
@@ -167,7 +156,7 @@ const jobRole = document.querySelector('.job-title');
 
 				function displayChange(name){
 					personName.textContent='';
-					personName.classList.remove('cursor');
+					
 
 							name.forEach((letter,index)=>{
 								const span =document.createElement('span');

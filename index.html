@@ -26,7 +26,7 @@
 </center>
 <!-- change and or in my name to bitwise operators -->
 
-<p class="flex space-around "><span class="btn border">Avaliable for Work </span> <button class=" btn btn-success"> Get in touch</button></p>
+<p class="flex space-around of-hidden "><span class="btn border  availability ">Available for Work </span> <button class=" btn btn-success  get-in-touch"> Get in touch</button></p>
 <div class="sidebar">
 	<span>projects</span><span class="arrow">ᐳ</span>
 </div>
@@ -42,17 +42,19 @@
 		<h3 class="text-left">Media Player App</h3>
 		<div class='project'>
 			<div class="card">
-				<a href="https://mediaplayerapp.herokuapp.com" target="_blank"><div class="layer flex center"> <span class="btn white-c border" >Visit Me</span> </div></a>
+				
 				<img src="project1.png" alt="media player page image" >
+				<a href="https://mediaplayerapp.herokuapp.com" target="_blank"><div class="layer flex center"> <span class="btn white-c border" >Visit Me</span> </div></a>
 				
 			</div>
 
-			<div class="text-left">
+			<div class="text-left project-description">
 				<p > A reposonsive web app function similar to to media player and the layout is identical to popular video streaming platform like youtube, vimeo </p>
 				<p>Show case your video library like online video course which is its main purpose </p>
 				<p>Seperated playlist based on modules names</p>
 				<a href="https://github.com/ChanduKishore/media_player" target="_blank" ><span class="btn border white-c">Github Source Code</span></a>
-			</div>
+
+			</div><p class="read-more"><button class="btn">read more</button></p>
 			
 		</div>
 		
@@ -78,7 +80,8 @@
 </body>
 <script type="text/javascript">
 	const body= document.querySelector('body');
-	
+	const readMore =document.querySelector('.read-more button');
+	const projectDesc =document.querySelector('.project-description');
 	const  pages =document.querySelectorAll('.page') ;
 	let currentPage = pages[0] ;
 
@@ -87,30 +90,32 @@
 
 	let touchstartX = 0;
 	let touchendX = 0;
-	let touchmoveX = 0;
 	let gesture;
 
 
 function handleGesture() {
-  if (touchendX < touchstartX) {
+  if (touchstartX - touchendX > 50 ) {
   	gesture ='swiped left!';
-  	console.log('swiped left!')}
-  if (touchendX > touchstartX) {
+  	console.log(touchstartX - touchendX);
+  }
+  if (touchendX - touchstartX > 50) {
   	gesture ='swiped right!';
-  	console.log('swiped right!')}
+  	console.log(touchendX - touchstartX);
+  }
+
 }
 	window.addEventListener('touchstart',(e)=> {
-		 touchstartX = e.changedTouches[0].screenX
+		 touchstartX = e.changedTouches[0].screenX;
+		 
 		})
-	window.addEventListener('touchmove',(e)=> {
-		 touchmoveX = e.changedTouches[0].screenX;
-		 console.log(touchmoveX)
-		})
+	
 
 window.addEventListener('touchend',(e)=> {
-	 touchendX = e.changedTouches[0].screenX
+	 touchendX = e.changedTouches[0].screenX;
 	handleGesture()
 	changePage();
+	gesture='';
+	
 })
 
 
@@ -118,40 +123,52 @@ function changePage(){
 
 	switch(gesture){
 		case 'swiped left!':
-		next();
+		if([...pages].indexOf(currentPage)!== pages.length-1) next();
 		break;
 		case 'swiped right!':
-		previous();
+		if([...pages].indexOf(currentPage))previous();
 		break;
 	}
 }
 
 function next(){
-if(nextPage){
+
 	currentPage.style.animationName='slide-leave-rl';
 	nextPage.style.animationName='slide-enter-rl';
 
 	previousPage = currentPage;
 	currentPage =nextPage;
 	let currentPageIndex =[...pages].indexOf(currentPage);
-	let nextPageIndex =(pages.length-1 >= currentPageIndex+1)? currentPageIndex +1 : 0
-	nextPage= pages[nextPageIndex]
+	let nextPageIndex = currentPageIndex +1
+	nextPage= pages[nextPageIndex];
 
 	}
-}
+
 
 function previous(){
-	if(previousPage){
+	
 		currentPage.style.animationName='slide-leave-lr';
 		previousPage.style.animationName='slide-enter-lr';
 
 		nextPage =currentPage;
 		currentPage =previousPage;
 		let currentPageIndex =[...pages].indexOf(currentPage);
-		let previousPageIndex =(currentPageIndex)? currentPageIndex-1:currentPageIndex;
+		let previousPageIndex =currentPageIndex-1;
 		previousPage= pages[previousPageIndex]
+	
 	}
-}
 
+readMore.addEventListener('click',()=>{
+
+	if(readMore.textContent==='read more'){
+	projectDesc.style.animationName='read-more';
+readMore.textContent='read less';}
+	else if(readMore.textContent==='read less'){
+		projectDesc.style.animationName='read-less';
+		readMore.textContent='read more';
+
+	}
+
+})
 </script>
 </html>
