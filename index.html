@@ -27,8 +27,15 @@
 <!-- change and or in my name to bitwise operators -->
 
 <p class="flex space-around of-hidden "><span class="btn border  availability ">Available for Work </span> <button class=" btn btn-success  get-in-touch"> Get in touch</button></p>
-<div class="sidebar">
-	<span>projects</span><span class="arrow">ᐳ</span>
+<div>
+	<ul class="flex space-around social-status">
+		<li><a href="https://www.instagram.com/chandukishore_dev/"><img src="Instagram-Logo.png" alt="Instagram"> </a></li>
+		<li><a href="https://linkedin.com/in/chandu-kishore-153b8818b"><img src="Linkedin-Logo.png" alt="Linkedin"></a></li>
+		<li><a href="https://github.com/ChanduKishore"><img src="Github-Logo.png" alt="Github"></a></li>
+	</ul>
+</div>
+<div class="messageBar">
+	<span>Swipe to Navigate</span><span class="arrow">ᐳ</span>
 </div>
 
 </div>
@@ -44,7 +51,6 @@
 			<div class="card">
 				
 				<img src="project1.png" alt="media player page image" >
-				<a href="https://mediaplayerapp.herokuapp.com" target="_blank"><div class="layer flex center"> <span class="btn white-c border" >Visit Me</span> </div></a>
 				
 			</div>
 
@@ -52,7 +58,9 @@
 				<p > A reposonsive web app function similar to to media player and the layout is identical to popular video streaming platform like youtube, vimeo </p>
 				<p>Show case your video library like online video course which is its main purpose </p>
 				<p>Seperated playlist based on modules names</p>
-				<a href="https://github.com/ChanduKishore/media_player" target="_blank" ><span class="btn border white-c">Github Source Code</span></a>
+				<div class="flex space-between"><a href="https://github.com/ChanduKishore/media_player" target="_blank" ><span class="btn border white-c">Source Code @Github </span></a>
+				<a href="https://mediaplayerapp.herokuapp.com" target="_blank"> <span class="btn white-c border" >Visit This Page</span></a> </div>
+				
 
 			</div><p class="read-more"><button class="btn">read more</button></p>
 			
@@ -81,8 +89,9 @@
 	const readMore =document.querySelector('.read-more button');
 	const projectDesc =document.querySelector('.project-description');
 	const  pages =document.querySelectorAll('.page') ;
+	const getInTouch =document.querySelector('.get-in-touch');
 
-	const sideBar = document.querySelector('.sidebar')
+	const messageBar = document.querySelector('.messageBar')
 	let currentPage = pages[0] ;
 
 	let previousPage=0;
@@ -93,12 +102,18 @@
 	let gesture;
 
 
+
+getInTouch.addEventListener('click',()=>{
+	nextPage=pages[2];
+	next();
+	previousPage=pages[0];
+})
 function handleGesture() {
-  if (touchstartX - touchendX > 50 ) {
+  if (touchstartX - touchendX > 100 ) {
   	gesture ='swiped left!';
   	console.log(touchstartX - touchendX);
   }
-  if (touchendX - touchstartX > 50) {
+  if (touchendX - touchstartX > 100) {
   	gesture ='swiped right!';
   	console.log(touchendX - touchstartX);
   }
@@ -144,8 +159,8 @@ function next(){
 	let nextPageIndex = currentPageIndex +1
 	nextPage= pages[nextPageIndex];
 
-		if( sideBar.parentNode!==null){
-				sideBar.parentNode.removeChild(sideBar);
+		if( messageBar.parentNode!==null){
+				messageBar.parentNode.removeChild(messageBar);
 			}
 
 	}
@@ -156,11 +171,11 @@ function previous(){
 		currentPage.style.animationName='slide-leave-lr';
 		previousPage.style.animationName='slide-enter-lr';
 
-		nextPage =currentPage;
+		
 		currentPage =previousPage;
 		let currentPageIndex =[...pages].indexOf(currentPage);
-		let previousPageIndex =currentPageIndex-1;
-		previousPage= pages[previousPageIndex]
+		nextPage =pages[currentPageIndex+1];
+		previousPage= pages[currentPageIndex-1]
 	
 	}
 

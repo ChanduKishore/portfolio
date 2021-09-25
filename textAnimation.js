@@ -1,19 +1,9 @@
 
 const personName = document.querySelector('.name');
 	personName.textContent='';
-
 const jobRole = document.querySelector('.job-title');
 	jobRoleText=jobRole.textContent;
 	jobRole.textContent='';
-	const sidebar = document.querySelector('.sidebar span');
-		sidebarText= sidebar.textContent;
-	sideBarContent();
-		
-
-	window.addEventListener('resize',()=>{sideBarContent()})
-	
-	
-	
 
 
 	let i=-1;
@@ -199,14 +189,7 @@ const jobRole = document.querySelector('.job-title');
 		}
 	
 		
-		function sideBarContent(){
-		if(window.innerWidth <=400){
-		swipeText='swipe to navigate';
-				}
-				else{swipeText=sidebarText;}
-		sidebar.textContent=swipeText;
-
-		}
+		
 
 	
 	
