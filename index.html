@@ -17,9 +17,6 @@
 
 <main>
 <div class="titlepage page">
-<nav>
-	<ul><li class="btn">Resume =></li></ul>
-</nav>
 
 	<center class="titles">
 <h1 class="name-container"><span class="greeting">Hello <br>this is<br></span><span class="name">Chandu Kishore</span></h1> 
@@ -28,17 +25,20 @@
 
 </center>
 <!-- change and or in my name to bitwise operators -->
-<p class="flex space-around of-hidden capitalize"><span class="btn border  availability ">Available for Work </span> <button class=" btn btn-success  get-in-touch"> Get in touch</button></p>
+<p class="flex space-around of-hidden capitalize"><a href="https://myresumechandukishore.netlify.com" target="_blank"><button class="btn border  view-resume">View Resume </button> </a><button class=" btn btn-success  get-in-touch"> Get in touch</button></p>
+
+
+
 
 <div>
 	<div class="flex space-around social-status">
-		<a href="https://www.instagram.com/chandukishore_dev/"><img src="Instagram-Logo.png" alt="Instagram"> </a>
-		<a href="https://linkedin.com/in/chandu-kishore-153b8818b"><img src="Linkedin-Logo.png" alt="Linkedin"></a>
-		<a href="https://github.com/ChanduKishore"><img src="Github-Logo.png" alt="Github"></a>
+		<a href="https://www.instagram.com/chandukishore_dev/" target="_blank"><img src="Instagram-Logo.png" alt="Instagram"> </a>
+		<a href="https://linkedin.com/in/chandu-kishore-153b8818b" target="_blank"><img src="Linkedin-Logo.png" alt="Linkedin"></a>
+		<a href="https://github.com/ChanduKishore" target="_blank"><img src="Github-Logo.png" alt="Github"></a>
 	</div>
 </div>
 <div class="messageBar">
-	<span>Swipe to Navigate</span><span class="arrow">ᐳ</span>
+	<span class="arrow left">‹</span><span>Swipe to Navigate</span><span class="arrow right">›</span>
 </div>
 
 </div>
@@ -88,11 +88,14 @@
 </main>
 </body>
 <script type="text/javascript">
+
 	const body= document.querySelector('body');
 	const readMore =document.querySelector('.read-more button');
 	const projectDesc =document.querySelector('.project-description');
 	const  pages =document.querySelectorAll('.page') ;
 	const getInTouch =document.querySelector('.get-in-touch');
+	const arrow =document.querySelectorAll('.arrow');
+	arrow[0].textContent='';
 
 	const messageBar = document.querySelector('.messageBar')
 	let currentPage = pages[0] ;
@@ -105,11 +108,13 @@
 	let gesture;
 
 
-
 getInTouch.addEventListener('click',()=>{
 	nextPage=pages[2];
 	next();
 	previousPage=pages[0];
+	arrow[0].textContent='‹';
+	arrow[1].textContent='';
+
 })
 function handleGesture() {
   if (touchstartX - touchendX > 100 ) {
@@ -141,10 +146,22 @@ function changePage(){
 
 	switch(gesture){
 		case 'swiped left!':
-		if([...pages].indexOf(currentPage)!== pages.length-1) next();
+		if([...pages].indexOf(currentPage)!== pages.length-1){
+
+			 next();
+			if( messageBar.parentNode!==null){
+				messageBar.parentNode.removeChild(messageBar);
+			}
+
+		}
 		break;
 		case 'swiped right!':
-		if([...pages].indexOf(currentPage))previous()
+		if([...pages].indexOf(currentPage)) {
+			previous();
+		if( messageBar.parentNode!==null){
+				messageBar.parentNode.removeChild(messageBar);
+			}
+}
 		break;
 	}
 
@@ -162,10 +179,7 @@ function next(){
 	let nextPageIndex = currentPageIndex +1
 	nextPage= pages[nextPageIndex];
 
-		if( messageBar.parentNode!==null){
-				messageBar.parentNode.removeChild(messageBar);
-			}
-
+		
 	}
 
 

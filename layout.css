@@ -10,16 +10,11 @@ padding: 0;
 }
 
 *{box-sizing: border-box;}
-nav{display: flex;
-	justify-content: flex-end;
-	position: absolute;
-	top: 0;
-	width: 95%;
-	}
+
 
 .titlepage{position: absolute;
 		width: 100%;
-		height: 100vh;
+		height: 95vh;
 		top: 0;
 	 animation: 0.7s ease forwards;
 	 }
@@ -52,28 +47,34 @@ nav{display: flex;
 	text-transform: capitalize;
 }
 
-.availability, .get-in-touch{
+.view-resume, .get-in-touch{
 	position: relative;
 	top: 100px;
  	animation: slide-up 1s ease 8s forwards; }
 
 .messageBar{
-	position: absolute
-	bottom: 10vh;
+	position: fixed;
+	bottom: 15vh;
 	width: 100vw;
 	background: #99E0FF;
 	color: #004766;
 	padding: 15px 0;
 	text-transform: capitalize;
 	opacity: 0;
-	animation: fade-in 2s ease 10s forwards;
-}
-.messageBar span{ padding-left :30vw}
-.arrow{
-	padding: 0 20px;
-	animation: pointing 1s ease infinite alternate-reverse;
+	animation: fade-in 2s ease 12s forwards;
+	text-align: center;
 }
 
+.arrow.right{
+	padding: 0 20px;
+	animation: pointing-right 1s ease infinite alternate-reverse;
+	
+}
+.arrow.left{
+	padding: 0 20px;
+	animation: pointing-left 1s ease infinite alternate-reverse;
+	
+}
 .cursor{border-right:1px solid ;}
 
 
@@ -83,9 +84,12 @@ nav{display: flex;
 	bottom: 5vh;
 	list-style: none;
 
+
 }
 .social-status a{color: white;
-	text-decoration: none;}
+	text-decoration: none;
+	visibility: hidden;
+animation: fade-in 1s ease 10s forwards;}
 .social-status img{ max-width: 75px; }
 
 .projects-heading{
@@ -193,9 +197,14 @@ label{font-size: 0.6rem;}
 .m-0{margin: 0}
 .of-hidden{overflow: hidden;}
 
-@keyframes pointing{
+@keyframes pointing-right{
 	from{padding-left: 20px;}
 	to{padding-left: 10px;}
+}
+
+@keyframes pointing-left{
+	from{padding-right: 20px;}
+	to{padding-right: 10px;}
 }
 
 @keyframes slide-enter-rl{
@@ -224,7 +233,7 @@ label{font-size: 0.6rem;}
 }
 @keyframes fade-in{
 	from{opacity: 0;}
-	to{opacity: 1;}
+	to{opacity: 1; visibility: visible;}
 }
 
 @keyframes slide-up{
