@@ -12,16 +12,20 @@ padding: 0;
 *{box-sizing: border-box;}
 nav{display: flex;
 	justify-content: flex-end;
-	margin: 0 10px;
+	position: absolute;
+	top: 0;
+	width: 95%;
 	}
 
 .titlepage{position: absolute;
 		width: 100%;
-		margin-top: 100px;
-		top: 100px;
+		height: 100vh;
+		top: 0;
 	 animation: 0.7s ease forwards;
 	 }
 .titles{
+	padding-top:20vh ;
+	padding-bottom: 10px;
 	text-transform: uppercase;
 	min-height: 12rem;}
 
@@ -31,7 +35,7 @@ nav{display: flex;
 	opacity: 0.1;
 	font-size: 5.5rem;
 	text-align: center;
-	top: -100px;
+	top: 10vh;
 	left: 20px;
 	transform: rotate(-15deg);
 }
@@ -54,8 +58,8 @@ nav{display: flex;
  	animation: slide-up 1s ease 8s forwards; }
 
 .messageBar{
-	position: fixed;
-	bottom: 50px;
+	position: absolute
+	bottom: 10vh;
 	width: 100vw;
 	background: #99E0FF;
 	color: #004766;
@@ -74,7 +78,9 @@ nav{display: flex;
 
 
 .social-status{
-	margin: 150px 10px  0 -20px ;
+	position: absolute;
+	width: 100%;
+	bottom: 5vh;
 	list-style: none;
 
 }
@@ -82,11 +88,16 @@ nav{display: flex;
 	text-decoration: none;}
 .social-status img{ max-width: 75px; }
 
+.projects-heading{
+font-size: calc(100% + 3vw);
+	padding: 10px;
+}
 .projects-container{
 	position: relative;
 	width: 90%;
 	margin: 0 auto;
 }
+
 .card{
 	width: 100%;
 	border-radius: 20px;
@@ -153,6 +164,7 @@ textarea{
 label{font-size: 0.6rem;}
 
 .projectpage,.messageform{
+	padding-top: 50px;
 	 width: 100vw;
 	 position: absolute;
 	 top:-1000vh;
@@ -161,7 +173,7 @@ label{font-size: 0.6rem;}
 
 .text-left{text-align: left;}
 .text-right{text-align: right;}
-
+.capitalize{text-transform: capitalize;}
 .btn{
 	border: 1px solid;
 	padding: 10px;
@@ -187,26 +199,26 @@ label{font-size: 0.6rem;}
 }
 
 @keyframes slide-enter-rl{
-	from{top: 100px;left: 150vw}
-	to{top: 100px;left: 0}
+	from{top: 0;left: 150vw}
+	to{top: 0;left: 0}
 
 }
 @keyframes slide-enter-lr{
-	from{top: 100px;right: 150vw}
-	to{top: 100px;right: 0}
+	from{top: 0;right: 150vw}
+	to{top: 0;right: 0}
 
 }
 
 @keyframes slide-leave-rl{
-0%{top: 100px; right: 0}
-99%{top: 100px;right: 150vw;} 
+0%{top: 0; right: 0}
+99%{top: 0;right: 150vw;} 
 100%{top: -1000vh;
  }
 }
 
 @keyframes slide-leave-lr{
-	0%{top: 100px;left:0}
-	99%{top: 100px;left: 150vw}
+	0%{top: 0;left:0}
+	99%{top: 0;left: 150vw}
 	100%{top: -1000vh}
 
 }
