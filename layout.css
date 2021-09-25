@@ -19,7 +19,7 @@ padding: 0;
 	 animation: 0.7s ease forwards;
 	 }
 .titles{
-	padding-top:20vh ;
+	padding-top:30vh ;
 	padding-bottom: 10px;
 	text-transform: uppercase;
 	min-height: 12rem;}
@@ -30,7 +30,7 @@ padding: 0;
 	opacity: 0.1;
 	font-size: 5.5rem;
 	text-align: center;
-	top: 10vh;
+	top: 15vh;
 	left: 20px;
 	transform: rotate(-15deg);
 }
