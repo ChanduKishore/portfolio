@@ -64,15 +64,16 @@ z-index: 100;}
 }
 
 @keyframes read-more{
-	from{height: 70px;}
-	to{height:210px;}
+	from{height: 65px;}
+	to{height:250px;}
 }
 @keyframes read-less{
-	from{height: 210px;}
-	to{height: 70px;}
+	from{height: 250px;}
+	to{height: 65px;}
 }
 
 @keyframes slide-right{
 	from{right: 100px;}
 	to{right: 0;}
 }
+

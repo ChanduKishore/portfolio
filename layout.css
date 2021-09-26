@@ -7,6 +7,7 @@ body{
 font-size: 14px;
 margin: 0;
 padding: 0;
+overflow-x: hidden;
 }
 
 *{box-sizing: border-box;}
@@ -102,6 +103,9 @@ font-size: calc(100% + 3vw);
 	margin: 0 auto;
 }
 
+.project{
+	width: 80%;
+}
 .card{
 	width: 100%;
 	border-radius: 20px;
@@ -117,7 +121,7 @@ img{max-width: 100%}
 
 .description{
 
-	height: 70px;
+	height: 65px;
 	overflow: hidden;
 	text-overflow: ellipsis;
 	animation: read-more 1s ease;
@@ -125,17 +129,7 @@ img{max-width: 100%}
 	animation: 1s ease forwards ;
 	opacity: 0.9;
 }
-.description::before{
-	content: "";
-    position: absolute;
-   bottom: 45px;
-    height: 20px;
-    width: 100%;
-    pointer-events: none;
-   
-    background-image : -webkit-linear-gradient(to bottom, transparent, #0A181E);
-    background-image : linear-gradient(to bottom, transparent, #0A181E);
-}
+
 
 .read-more{
 	margin: 10px;
@@ -154,7 +148,8 @@ form{
 input,textarea,button{font-family: inherit;
 font-size: inherit;}
 
-form h2{text-align: center;}
+form h2{text-align: center;
+font-size: 2rem;}
 
 form div{ margin-bottom:20px ; }
 
@@ -166,7 +161,7 @@ textarea{
 	height: 100px;
 	resize: none;}
 
-label{font-size: 0.6rem;}
+label{font-size: 0.8rem;}
 
 .projectpage,.messageform{
 	padding-top: 50px;
@@ -181,12 +176,13 @@ label{font-size: 0.6rem;}
 .capitalize{text-transform: capitalize;}
 .btn{
 	border: 1px solid;
-	padding: 10px;
+	padding: 10px 5px;
 	display: inline-block;
 	color: white;
 	background: none;
 }
-.btn-success{background:#009DE0 ;}
+.btn-success{background:#009DE0 ;
+border: none;}
 
 .flex{display: flex;}
 .center{
@@ -213,7 +209,7 @@ nav p{
 }
 nav button{
 	position: relative;
-		background:skyblue ;
+		background:#90C8E0 ;
 		border: none;
 		padding:25px 20px 25px 10px;
 		width: 35px;
@@ -226,9 +222,7 @@ nav button{
 
 	}
 
-@media(pointer: fine){
-	body{overflow: hidden;}
-}
+
 @media( width > 560px){
 
 	.greeting{
@@ -238,23 +232,56 @@ nav button{
 	.name-container{
 	min-height: 5rem;}
 
-	form{width: 556px}
+	form{width: 445px}
+
+	.project{
+		max-width: 445px;
+	}
 	
 }
 
 @media (width > 900px){
-	.project{
-		padding:0 50px;
-		display:grid ;
-		grid-template-columns: 1fr 1fr;
-		grid-gap: 20px;
-		position: relative;
-		}
+	.greeting{
+		font-size: 10rem;
+		left: 20vw}
 
+	.info-box{
+		width: 870px;
+		margin: 0 auto;}
+
+	.name{font-size:5rem ;}
 	
-	.description::before{
-		background: none;
+	
+
+.projects-container{
+	overflow: hidden;
+	display: flex;
+	max-width: 800px;
 }
+.project{
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-gap: 30px;
+	min-width: 800px;
+	margin-right:100px ;
 	
+}	
+.projects-nav{
+	margin-top: 20px;
 
+}
+.projects-nav button{
+border-radius: 50%;
+margin-left:5px ;
+
+
+}
+.btn-active{
+	width: 15px;
+	height: 15px;
+ background: skyblue; }
+.btn-inactive{
+	width: 15px;
+	height: 15px;
+	background: none;}
 }

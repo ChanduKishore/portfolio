@@ -1,13 +1,26 @@
 const body= document.querySelector('body');
-	const readMore =document.querySelector('.read-more button');
-	const projectDesc =document.querySelector('.description');
+	const readMoreBtns =document.querySelectorAll('.read-more button');
+	const projectDesc =document.querySelectorAll('.description');
 	const  pages =document.querySelectorAll('.page') ;
 	const getInTouch =document.querySelector('.get-in-touch');
 	const arrow =document.querySelectorAll('.messageBar .arrow');
 	const nav=document.querySelector('nav');
 	const navRight =document.querySelector('.nav-right');
 	const navleft =document.querySelector('.nav-left');
+	const projectsNavBar =document.querySelector('.projects-nav');
+	const projects= document.querySelector('.projects-container');
+	const nProjects = Math.floor(projects.scrollWidth/900);
 
+	for(i=0;i < nProjects;i++){
+		const ProjectsNavBtn =document.createElement('button');
+		ProjectsNavBtn.classList.add('btn-inactive');
+		projectsNavBar.appendChild(ProjectsNavBtn);
+
+	}
+	let sliderX =0;
+	projects.scrollTo(sliderX,0);
+	const projectNavBtns = document.querySelectorAll('.projects-nav button');
+	changeBtnState()
 	
 	arrow[0].textContent='';
 
@@ -135,19 +148,6 @@ function previous(){
 		changeNav();
 	})
 
-readMore.addEventListener('click',()=>{
-
-	if(readMore.textContent==='read more'){
-	projectDesc.style.animationName='read-more';
-readMore.textContent='read less';}
-	else if(readMore.textContent==='read less'){
-		projectDesc.style.animationName='read-less';
-		readMore.textContent='read more';
-
-	}
-	console.log('read-more');
-
-})
 
 
 function changeNav(){
@@ -163,4 +163,68 @@ function changeNav(){
 		navleft.style.visibility='visible';
 		navRight.style.visibility='visible';
 	}
+}
+
+readMoreBtns.forEach((readMore,index)=>{
+
+	readMore.addEventListener('click',()=>{
+
+	if(readMore.textContent==='read more'){
+	projectDesc[index].style.animationName='read-more';
+readMore.textContent='read less';}
+	else if(readMore.textContent==='read less'){
+		projectDesc[index].style.animationName='read-less';
+		readMore.textContent='read more';
+
+	}
+	console.log('read-more');
+
+})
+})
+
+
+projectNavBtns.forEach((button, index)=>{
+
+	button.addEventListener('click',(e)=>{
+		let direction =(sliderX < 900*index)? 'forward': 'backward';
+		scroll(sliderX,direction);
+		sliderX =900*index;
+		changeBtnState();
+		
+		
+	})
+})
+
+function scroll(offset,direction){
+	switch(direction){
+		case 'forward':
+		offset+=25;
+		break;
+		case 'backward':
+		offset-=25;
+		break;
+	}
+	
+	changeScroll(offset);
+	const scrolling  = setTimeout(scroll,10,offset,direction);
+	console.log(sliderX,direction,offset);
+	if(projects.scrollLeft === sliderX){
+
+		clearTimeout(scrolling);
+	}
+}
+function changeScroll(offset){
+	projects.scrollTo(offset,0);
+}
+
+function changeBtnState(){
+
+	projectNavBtns.forEach((button, index)=>{
+		if(index*900 === sliderX){
+			button.classList.remove('btn-inactive');
+			button.classList.add('btn-active');
+		}
+		else{button.classList.add('btn-inactive');}
+	})
+
 }
