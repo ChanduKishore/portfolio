@@ -13,3 +13,66 @@ z-index: 100;}
 	100%{top: -300vh;}
 	
 }
+
+@keyframes pointing-right{
+	from{padding:0 10px;}
+	to{padding-left: 0px; padding-right: 0;}
+}
+
+@keyframes pointing-left{
+	from{padding:0 10px;}
+	to{padding-right: 0px; padding-left: 0;}
+}
+
+@keyframes slide-enter-rl{
+	from{top: 0;left: 150vw}
+	to{top: 0;left: 0}
+
+}
+@keyframes slide-enter-lr{
+	from{top: 0;right: 150vw}
+	to{top: 0;right: 0}
+
+}
+
+@keyframes slide-leave-rl{
+0%{top: 0; right: 0}
+99%{top: 0;right: 150vw;} 
+100%{top: -1000vh;
+ }
+}
+
+@keyframes slide-leave-lr{
+	0%{top: 0;left:0}
+	99%{top: 0;left: 150vw}
+	100%{top: -1000vh}
+
+}
+@keyframes fade-in{
+	from{opacity: 0;}
+	to{opacity: 1; visibility: visible;}
+}
+
+@keyframes slide-up{
+	from{top: 100px; opacity: 0.5;}
+	to{top: 0;opacity: 1;}
+}
+
+@keyframes vanish{
+	from{opacity: 1;}
+	to{opacity: 0; visibility: hidden;}
+}
+
+@keyframes read-more{
+	from{height: 70px;}
+	to{height:210px;}
+}
+@keyframes read-less{
+	from{height: 210px;}
+	to{height: 70px;}
+}
+
+@keyframes slide-right{
+	from{right: 100px;}
+	to{right: 0;}
+}

@@ -7,6 +7,7 @@
 	<link rel="stylesheet" type="text/css" href="layout.css">
 	<link rel="stylesheet" type="text/css" href="animations.css">
 	<script type="text/javascript" src="textAnimation.js" defer></script>
+	<script type="text/javascript" src="navigation_controls.js" defer></script>
 	
 </head>
 <body>
@@ -14,7 +15,11 @@
 	<!-- idea or theme of this portifolio is dynamic changes in text using java script 
 	trasistions to show case my java script skills -->
 
+<nav class="flex space-between">
 
+	<p><button class="nav-left"><span class="left arrow">‹</span></button><p>
+	<p><button class="nav-right" ><span class="right arrow ">›</span></button></p>
+</nav>
 <main>
 <div class="titlepage page">
 
@@ -32,9 +37,9 @@
 
 <div>
 	<div class="flex space-around social-status">
-		<a href="https://www.instagram.com/chandukishore_dev/" target="_blank"><img src="Instagram-Logo.png" alt="Instagram"> </a>
-		<a href="https://linkedin.com/in/chandu-kishore-153b8818b" target="_blank"><img src="Linkedin-Logo.png" alt="Linkedin"></a>
-		<a href="https://github.com/ChanduKishore" target="_blank"><img src="Github-Logo.png" alt="Github"></a>
+		<a href="https://www.instagram.com/chandukishore_dev/" target="_blank"><img src="logo/Instagram-Logo.png" alt="Instagram"> </a>
+		<a href="https://linkedin.com/in/chandu-kishore-153b8818b" target="_blank"><img src="logo/Linkedin-Logo.png" alt="Linkedin"></a>
+		<a href="https://github.com/ChanduKishore" target="_blank"><img src="logo/Github-Logo.png" alt="Github"></a>
 	</div>
 </div>
 <div class="messageBar">
@@ -50,22 +55,22 @@
 		<h2 class="projects-heading">Projects </h2> 
 <!-- change this project showcase background and font family timingly  -->
 		<div class='project'>
-			<h3 class="text-left">Media Player App</h3>
+			
 			<div class="card">
 				
 				<img src="project1.png" alt="media player page image" >
 				
 			</div>
-
-			<div class="text-left project-description">
+			<div class="content">
+			<h3 class="text-left project-name">Media Player App</h3>
+			<div class="text-left description">
 				<p > A reposonsive web app function similar to to media player and the layout is identical to popular video streaming platform like youtube, vimeo </p>
 				<p>Show case your video library like online video course which is its main purpose </p>
 				<p>Seperated playlist based on modules names</p>
 				<div class="flex space-between"><a href="https://github.com/ChanduKishore/media_player" target="_blank" ><span class="btn border white-c">Source Code @Github </span></a>
 				<a href="https://mediaplayerapp.herokuapp.com" target="_blank"> <span class="btn white-c border" >Visit This Page</span></a> </div>
-				
-
-			</div><p class="read-more"><button class="btn">read more</button></p>
+				</div><p class="read-more"><button class="btn">read more</button></p>
+			</div>
 			
 		</div>
 	</center>
@@ -89,124 +94,6 @@
 </body>
 <script type="text/javascript">
 
-	const body= document.querySelector('body');
-	const readMore =document.querySelector('.read-more button');
-	const projectDesc =document.querySelector('.project-description');
-	const  pages =document.querySelectorAll('.page') ;
-	const getInTouch =document.querySelector('.get-in-touch');
-	const arrow =document.querySelectorAll('.arrow');
-	arrow[0].textContent='';
 
-	const messageBar = document.querySelector('.messageBar')
-	let currentPage = pages[0] ;
-
-	let previousPage=0;
-	let nextPage=pages[1];
-
-	let touchstartX = 0;
-	let touchendX = 0;
-	let gesture;
-
-
-getInTouch.addEventListener('click',()=>{
-	nextPage=pages[2];
-	next();
-	previousPage=pages[0];
-	arrow[0].textContent='‹';
-	arrow[1].textContent='';
-
-})
-function handleGesture() {
-  if (touchstartX - touchendX > 100 ) {
-  	gesture ='swiped left!';
-  	console.log(touchstartX - touchendX);
-  }
-  if (touchendX - touchstartX > 100) {
-  	gesture ='swiped right!';
-  	console.log(touchendX - touchstartX);
-  }
-
-}
-	window.addEventListener('touchstart',(e)=> {
-		 touchstartX = e.changedTouches[0].screenX;
-		 
-		})
-	
-
-window.addEventListener('touchend',(e)=> {
-	 touchendX = e.changedTouches[0].screenX;
-	handleGesture()
-	changePage();
-	gesture='';
-	
-})
-
-
-function changePage(){
-
-	switch(gesture){
-		case 'swiped left!':
-		if([...pages].indexOf(currentPage)!== pages.length-1){
-
-			 next();
-			if( messageBar.parentNode!==null){
-				messageBar.parentNode.removeChild(messageBar);
-			}
-
-		}
-		break;
-		case 'swiped right!':
-		if([...pages].indexOf(currentPage)) {
-			previous();
-		if( messageBar.parentNode!==null){
-				messageBar.parentNode.removeChild(messageBar);
-			}
-}
-		break;
-	}
-
-	
-}
-
-function next(){
-
-	currentPage.style.animationName='slide-leave-rl';
-	nextPage.style.animationName='slide-enter-rl';
-
-	previousPage = currentPage;
-	currentPage =nextPage;
-	let currentPageIndex =[...pages].indexOf(currentPage);
-	let nextPageIndex = currentPageIndex +1
-	nextPage= pages[nextPageIndex];
-
-		
-	}
-
-
-function previous(){
-	
-		currentPage.style.animationName='slide-leave-lr';
-		previousPage.style.animationName='slide-enter-lr';
-
-		
-		currentPage =previousPage;
-		let currentPageIndex =[...pages].indexOf(currentPage);
-		nextPage =pages[currentPageIndex+1];
-		previousPage= pages[currentPageIndex-1]
-	
-	}
-
-readMore.addEventListener('click',()=>{
-
-	if(readMore.textContent==='read more'){
-	projectDesc.style.animationName='read-more';
-readMore.textContent='read less';}
-	else if(readMore.textContent==='read less'){
-		projectDesc.style.animationName='read-less';
-		readMore.textContent='read more';
-
-	}
-
-})
 </script>
 </html>
