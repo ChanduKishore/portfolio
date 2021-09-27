@@ -318,12 +318,11 @@ margin-left:5px ;
 
 }
 .btn-active{
-	width: 15px;
-	height: 15px;
- background: skyblue; }
+background: none;	
+ animation: circle-btn-on 0.3s ease forwards;
+}
 .btn-inactive{
-	width: 15px;
-	height: 15px;
-	background: none;}
+	background: white;
+	animation: circle-btn-off 0.3s ease forwards;}
 
 }

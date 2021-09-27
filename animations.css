@@ -77,3 +77,26 @@ z-index: 100;}
 	to{right: 0;}
 }
 
+
+@keyframes circle-btn-on{
+	from{ width: 15px;
+	height: 15px;
+	border: 2px solid white;
+	 }
+	to{width: 20px;
+	height: 20px;
+ border: 5px solid white;}
+}
+
+@keyframes circle-btn-off{
+	from{width: 20px;
+	height: 20px;
+ border: 5px solid white;}
+	to{ 
+		width: 15px;
+	height: 15px;
+	border: 2px solid white;
+	
+	 }
+	
+}
