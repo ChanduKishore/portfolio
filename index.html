@@ -8,6 +8,7 @@
 	<link rel="stylesheet" type="text/css" href="animations.css">
 	<script type="text/javascript" src="textAnimation.js" defer></script>
 	<script type="text/javascript" src="navigation_controls.js" defer></script>
+	<script type="text/javascript" src="slide.js" defer></script>
 	
 </head>
 <body>
@@ -89,16 +90,26 @@
 <div class="messageform page">
 <form name="contact" method="POST" data-netlify="true" >
 	<h2 class="center">Message Me</h2>
-	<div>
-		<label for="email">Email</label>
-		<input type="email" name="email" id='email'>
+
+	<div class="email to flex align-center space-between">
+		<label for="to">To</label>
+		<input type="email" name="to" id='to' disabled value="developer.chandu@gamil.com ">
 	</div>
-	<div>
-		<label for="message">Message</label>
-		<textarea name="message" id='message'></textarea>
+
+	<div class="email from flex align-center space-between">
+		<label for="from">From</label>
+		<input type="email" name="from" id='from'>
 	</div>
-	<div class="flex center">
-	<button class=" btn btn-success">Send Message</button></div>
+
+	<div>
+		<input type="text" name="subject"  placeholder="Subject">
+	</div>
+
+	<div>
+		<textarea name="message" id='message' placeholder ="Compose Message"></textarea>
+	</div>
+	
+	<button >➤</button>
 </form>
 </div>
 </main>

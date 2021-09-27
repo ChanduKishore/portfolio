@@ -104,7 +104,7 @@ font-size: calc(100% + 3vw);
 }
 
 .project{
-	width: 80%;
+	width: 90%;
 }
 .card{
 	width: 100%;
@@ -140,51 +140,84 @@ img{max-width: 100%}
 	
 }
 
+.messageform{
+	padding-top: 20px;
+}
 form{
 	position: relative;
-	width: 80%;
+	width: 100%;
 	margin: 0 auto;
 }
 input,textarea,button{font-family: inherit;
 font-size: inherit;}
 
-form h2{text-align: center;
-font-size: 2rem;}
+form *{outline: none;}
 
-form div{ margin-bottom:20px ; }
+form h2{padding-left: 10px;}
 
-input,textarea{width: 100%;
-	padding: 5px;
+form div{border-bottom: 1px solid grey;padding: 10px;background: white; }
+form div:last-child{border:none}
+
+.email{  color:grey; }
+
+
+.email.to{background: #E1E1E1 ;}
+.email.to input{}
+
+input,textarea{
+	width: 100%;
+	border: none;
+	padding:0 10px
+	
 }
 
 textarea{
-	height: 100px;
-	resize: none;}
+	height:150px;
+	resize: none;
+	margin-top:-0.5px ;
+}
 
-label{font-size: 0.8rem;}
+form button{
+	font-size:20px;
+	position: absolute;
+	top: -5px;
+	right: 10px;
+	padding: 5px 30px;
+background:#3182FB;
+border: none;
+color: white;
+border-radius: 2px;}
+
+label{font-size: 0.8rem; 
+	display: inline-block;
+	 padding:0 10px; 
+	 border: none;}
 
 .projectpage,.messageform{
-	padding-top: 50px;
 	 width: 100vw;
 	 position: absolute;
 	 top:-1000vh;
 	 animation: 0.7s ease forwards;
 }
 
+
 .text-left{text-align: left;}
 .text-right{text-align: right;}
 .capitalize{text-transform: capitalize;}
 .btn{
 	border: 1px solid;
-	padding: 10px 5px;
+	padding: 10px;
 	display: inline-block;
 	color: white;
 	background: none;
+	text-align: center;
 }
-.btn-success{background:#009DE0 ;
+.btn-success{background:#3182FB;
 border: none;}
 
 .flex{display: flex;}
+.align-center{
+	align-items: center;}
 .center{
 	align-items: center;
 	justify-content: center;}
@@ -222,7 +255,13 @@ nav button{
 
 	}
 
-
+@media(pointer: fine){
+	
+	.messageform{
+		padding-top: 100px;
+	}
+	.project,form{width: calc(300px + 10vw);}
+}
 @media( width > 560px){
 
 	.greeting{
@@ -232,11 +271,13 @@ nav button{
 	.name-container{
 	min-height: 5rem;}
 
-	form{width: 445px}
+	
 
 	.project{
 		max-width: 445px;
 	}
+
+
 	
 }
 
@@ -284,4 +325,5 @@ margin-left:5px ;
 	width: 15px;
 	height: 15px;
 	background: none;}
+
 }
