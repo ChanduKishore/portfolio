@@ -145,8 +145,8 @@ function displayProjectNavBar(){
 			buttonList.forEach((button, index)=>{
 
 				if(index*900 === sliderX){
-							button.setAttribute('class','btn-active');}
-							else{button.setAttribute('class','btn-inactive');}
+							button.setAttribute('class','btn-inactive');}
+							else{button.setAttribute('class','btn-active');}
 			})
 		}
 

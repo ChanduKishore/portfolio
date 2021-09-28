@@ -7,7 +7,7 @@ const body= document.querySelector('body');
 	const nav=document.querySelector('nav');
 	const navRight =document.querySelector('.nav-right');
 	const navleft =document.querySelector('.nav-left');
-	const message =document.querySelector('.message');
+	const navMessages =document.querySelectorAll('.nav-message');
 	
 	arrow[0].textContent='';
 
@@ -31,7 +31,7 @@ if (!("ontouchstart" in document.documentElement)){
 		
 	}else{
 		nav.parentNode.removeChild(nav);
-		message.parentNode.removeChild(message);
+		navMessages.forEach(message=>{message.parentNode.removeChild(message)});
 	}
 		
 

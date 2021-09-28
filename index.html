@@ -46,6 +46,7 @@
 <div class="messageBar">
 	<span class="arrow left">‹</span><span>Swipe to Navigate</span><span class="arrow right">›</span>
 </div>
+<p class="flex center nav-message">Use Mouse or <span class="arrow-key">ᐊ</span> <span class="arrow-key">ᐅ</span> keys to navigate</p>
 
 </div>
 
@@ -66,9 +67,9 @@
 			<div class="content">
 			<h3 class="text-left project-name">Media Player App</h3>
 			<div class="text-left description">
-				<p > A reposonsive web app function similar to to media player and the layout is identical to popular video streaming platform like youtube, vimeo </p>
-				<p>Show case your video library like online video course which is its main purpose </p>
-				<p>Seperated playlist based on modules names</p>
+				<p > A reposonsive web app function similar to to media player and the layout is similar to popular video streaming platform like youtube, vimeo. </p>
+				<p>Show case your online video course or favourite playlist.  </p>
+				<p>Seperated playlist based on modules names. Easy to update and maintain.</p>
 				<div class="flex space-between"><a href="https://github.com/ChanduKishore/media_player" target="_blank" ><span class="btn border white-c">Source Code @Github </span></a>
 				<a href="https://mediaplayerapp.herokuapp.com" target="_blank"> <span class="btn white-c border" >Visit This Page</span></a> </div>
 				</div><p class="read-more"><button class="btn">read more</button></p>
@@ -82,7 +83,7 @@
 	</center>
 	<div class="flex center projects-nav">	
 		</div>
-		<h3 class="message">Use Mouse or Arrow Up & Down to navigate projects</h3>
+		<p class="nav-message">Use Mouse or <span class="arrow-key">ᐃ</span> <span class="arrow-key">ᐁ</span> to navigate projects</p>
 
 </div>
 <div class="messageform page">
@@ -91,12 +92,12 @@
 
 	<div class="email to flex align-center space-between">
 		<label for="to">To</label>
-		<input type="email" name="to" id='to' disabled value="developer.chandu@gmail.com ">
+		<input type="email" name="to" id='to' readonly value="developer.chandu@gmail.com ">
 	</div>
 
 	<div class="email from flex align-center space-between">
 		<label for="from">From</label>
-		<input type="email" name="from" id='from'>
+		<input type="email" name="from" id='from' required>
 	</div>
 
 	<div>
@@ -104,7 +105,7 @@
 	</div>
 
 	<div>
-		<textarea name="message" id='message' placeholder ="Compose Message"></textarea>
+		<textarea name="message" id='message' placeholder ="Compose Message" required></textarea>
 	</div>
 	
 	<button >➤</button>
