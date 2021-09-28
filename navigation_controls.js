@@ -52,6 +52,21 @@ previousPage.style.top='-1000vh';
 nextPage.style.top='-1000vh';
 }
 
+window.addEventListener('keydown',(e)=>{
+      switch(e.key){
+      	case 'ArrowRight':
+      	console.log('right');
+      	gesture ='swiped left!';
+      	changePage();
+      	break;
+      	case 'ArrowLeft':
+      	console.log('left');
+      	gesture ='swiped right!';
+      	changePage();
+      	break;
+      }
+   })
+
 function handleGesture() {
   if (touchstartX - touchendX > 100 ) {
   	gesture ='swiped left!';

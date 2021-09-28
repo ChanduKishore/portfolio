@@ -10,7 +10,10 @@ padding: 0;
 overflow-x: hidden;
 }
 
-*{box-sizing: border-box;}
+*{box-sizing: border-box;
+outline-width: 5px;
+outline-offset: 2px;
+}
 
 
 .titlepage{position: absolute;
@@ -298,6 +301,7 @@ nav button{
 	overflow: hidden;
 	display: flex;
 	max-width: 800px;
+	
 }
 .project{
 	display: grid;
@@ -309,13 +313,16 @@ nav button{
 }	
 .projects-nav{
 	margin-top: 20px;
-
+	
 }
 .projects-nav button{
 border-radius: 50%;
 margin-left:5px ;
-
-
+}
+.message{
+	opacity: 0.4;
+	color: grey;
+	text-align: center;
 }
 .btn-active{
 background: none;	
