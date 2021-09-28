@@ -186,7 +186,7 @@ form div:last-child{border:none}
 
 .email.to, .to > input{background: #E1E1E1 ; color: grey;}
 
-.email label, form div{font-size: 1.7rem;}
+.email label, form div{font-size: 1.3rem;}
 *:disabled{background: #E1E1E1 ;}
 input,textarea{
 	width: 100%;
