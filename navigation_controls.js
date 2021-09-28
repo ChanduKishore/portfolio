@@ -8,6 +8,7 @@ const body= document.querySelector('body');
 	const navRight =document.querySelector('.nav-right');
 	const navleft =document.querySelector('.nav-left');
 	const navMessages =document.querySelectorAll('.nav-message');
+	nav.parentNode.removeChild(nav);
 	
 	arrow[0].textContent='';
 

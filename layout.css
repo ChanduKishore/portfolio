@@ -109,23 +109,25 @@ box-shadow: 3px 3px black;
 
 }
 .nav-message{
+	padding-top: 20px;
 	visibility: hidden;
 	animation: fade-in 2s ease 12s forwards;}
 
 .projects-heading{
-font-size: calc(100% + 3vw);
+font-size: calc(100% + 2vw);
 	padding: 10px;
 }
 
 .projects-container{
 	position: relative;
 	width: 90%;
-	margin: 0 auto;
+	margin: 0px auto;
+	
 }
 
 .project{
 	width: 90%;
-	margin-top: 50px;
+	margin-top: 0px;
 }
 .card{
 	width: 100%;
