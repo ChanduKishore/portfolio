@@ -1,12 +1,13 @@
 
 const projectsNavBar =document.querySelector('.projects-nav');
 const projects= document.querySelector('.projects-container');
+
 const nProjects = Math.floor(projects.scrollWidth/900);
 let sliderX =0;
 let refslider=0;
 let counter=0;
 let scrolling=false;
-
+let direction;
 setNavBar();
 
 window.addEventListener('resize',()=>{
@@ -39,7 +40,7 @@ function displayProjectNavBar(){
 							button.addEventListener('click',(e)=>{
 								counter=index;
 								sliderX =900*index;
-								let direction;
+								
 								switch(true){
 									case (sliderX > refslider):
 									direction ='forward';
@@ -54,11 +55,12 @@ function displayProjectNavBar(){
 								}
 								 
 								 if(direction!=='none'){
-								 scroll(refslider,direction);}
+								 scroll(refslider,direction);
+								disableBtns(projectNavBtns);}
 								 refslider =sliderX;
 								
 								changeBtnState(projectNavBtns);
-								disableBtns(projectNavBtns);
+								
 								
 								
 							})
@@ -99,7 +101,6 @@ function displayProjectNavBar(){
 					scroll(refslider,direction);}
 					refslider =sliderX;		
 					changeBtnState(projectNavBtns);
-					disableBtns(projectNavBtns);
 				})
 			function scroll(offset,direction){
 				switch(direction){

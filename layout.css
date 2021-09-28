@@ -65,17 +65,20 @@ outline-offset: 2px;
 	padding: 15px 0;
 	text-transform: capitalize;
 	opacity: 0;
-	animation: fade-in 2s ease 12s forwards;
+	animation: fade-in 2s ease 0s forwards;
 	text-align: center;
 }
 
 .arrow.right{
-	padding: 0 10px;
+	position: relative;
+	padding: 0 15px;
 	animation: pointing-right 1s ease-in infinite alternate-reverse;
 	
 }
 .arrow.left{
-	padding: 0 10px;
+	position: relative;
+	padding: 0 15px;
+	
 	animation: pointing-left 1s ease-out 1s infinite alternate-reverse;
 	
 }
@@ -175,7 +178,7 @@ input,textarea{
 }
 
 textarea{
-	height:150px;
+	height:calc(100vh - 230px );
 	resize: none;
 	margin-top:-0.5px ;
 }
