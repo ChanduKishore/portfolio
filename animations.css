@@ -65,10 +65,10 @@ z-index: 100;}
 
 @keyframes read-more{
 	from{height: 65px;}
-	to{height:215px;}
+	to{height:230px;}
 }
 @keyframes read-less{
-	from{height: 215px;}
+	from{height: 230px;}
 	to{height: 65px;}
 }
 
