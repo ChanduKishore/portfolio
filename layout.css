@@ -196,7 +196,7 @@ input,textarea{
 }
 
 textarea{
-	height:calc(100vh - 245px );
+	height:calc(100vh - 255px );
 	resize: none;
 	margin-top:-0.5px ;
 }
