@@ -60,11 +60,13 @@ window.addEventListener('keydown',(e)=>{
       	console.log('right');
       	gesture ='swiped left!';
       	changePage();
+      	changeNav();
       	break;
       	case 'ArrowLeft':
       	console.log('left');
       	gesture ='swiped right!';
       	changePage();
+      	changeNav();
       	break;
       	
       }

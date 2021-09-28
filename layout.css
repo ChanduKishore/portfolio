@@ -96,7 +96,8 @@ outline-offset: 2px;
 .social-status a{color: white;
 	text-decoration: none;
 	visibility: hidden;
-animation: fade-in 1s ease 10s forwards;}
+	animation: fade-in 1s ease 10s forwards;}
+
 .social-status img{ max-width: 75px; }
 
 .projects-heading{
@@ -274,6 +275,13 @@ nav button{
 	textarea{
 	height:150px;}
 	.email label, form div{font-size: 1rem;}
+
+
+	.social-status{	
+	justify-content: center;
+	}
+	.social-status a{margin: 10px;}
+}
 }
 @media( width > 560px){
 
@@ -301,7 +309,9 @@ nav button{
 
 	.info-box{
 		width: 870px;
-		margin: 0 auto;}
+		margin: 30px auto;}
+
+	.name-container{min-height: 6rem;}
 
 	.name{font-size:5rem ;}
 	
