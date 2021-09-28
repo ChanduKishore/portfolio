@@ -111,6 +111,7 @@ font-size: calc(100% + 3vw);
 
 .project{
 	width: 90%;
+	margin-top: 50px;
 }
 .card{
 	width: 100%;
@@ -170,7 +171,7 @@ form div:last-child{border:none}
 .email{  color:grey; }
 
 .email.to{background: #E1E1E1 ;}
-
+.email label, form div{font-size: 1.2rem;}
 *:disabled{background: #E1E1E1 ;}
 input,textarea{
 	width: 100%;
@@ -272,6 +273,7 @@ nav button{
 
 	textarea{
 	height:150px;}
+	.email label, form div{font-size: 1rem;}
 }
 @media( width > 560px){
 
