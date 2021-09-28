@@ -161,15 +161,17 @@ form *{outline: none;}
 
 form h2{padding-left: 10px;}
 
-form div{border-bottom: 1px solid grey;padding: 10px;background: white; }
+form div{border-bottom: 1px solid grey;
+	padding: 15px;
+	background: white;
+	; }
 form div:last-child{border:none}
 
 .email{  color:grey; }
 
-
 .email.to{background: #E1E1E1 ;}
-.email.to input{}
 
+*:disabled{background: #E1E1E1 ;}
 input,textarea{
 	width: 100%;
 	border: none;
@@ -178,7 +180,7 @@ input,textarea{
 }
 
 textarea{
-	height:calc(100vh - 230px );
+	height:calc(100vh - 245px );
 	resize: none;
 	margin-top:-0.5px ;
 }
@@ -267,6 +269,9 @@ nav button{
 		padding-top: 100px;
 	}
 	.project,form{width: calc(300px + 10vw);}
+
+	textarea{
+	height:150px;}
 }
 @media( width > 560px){
 
