@@ -65,7 +65,7 @@ outline-offset: 2px;
 	padding: 15px 0;
 	text-transform: capitalize;
 	opacity: 0;
-	animation: fade-in 2s ease 0s forwards;
+	animation: fade-in 2s ease 12s forwards;
 	text-align: center;
 }
 
@@ -171,7 +171,7 @@ form div:last-child{border:none}
 .email{  color:grey; }
 
 .email.to{background: #E1E1E1 ;}
-.email label, form div{font-size: 1.2rem;}
+.email label, form div{font-size: 1.5rem;}
 *:disabled{background: #E1E1E1 ;}
 input,textarea{
 	width: 100%;
@@ -260,7 +260,7 @@ nav button{
 		pointer-events: auto;
 		font-size:2rem ;
 		right: 100px;
-		animation: slide-right 1s ease 0s forwards;
+		animation: slide-right 1s ease 12s forwards;
 
 	}
 
